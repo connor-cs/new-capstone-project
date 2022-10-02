@@ -23,6 +23,10 @@ gem "puma", "~> 5.0"
 
 gem "pry", "~> 0.14.1"
 
+gem "net-http"
+
+gem "awesome_print", "~> 1.9"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 

@@ -25,7 +25,7 @@ State.all.each do |state|
     json = JSON.parse response.body
 
     json.each do |x, y|
-         trail = Trail.find_or_create_by(
+        trail = Trail.find_or_create_by(
             name: y["name"],
             city: y["city"],
             state_id: state.id,
@@ -34,7 +34,7 @@ State.all.each do |state|
             latitude: y["lat"].to_f,
             longitude: y["lon"].to_f,
             length: y["activities"]["hiking"]["length"]
-         )
+        )
     
     end
 
