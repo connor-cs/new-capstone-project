@@ -1,18 +1,16 @@
-import '../App.css';
 import React from 'react'
-import Header from './Header';
-import Landing from './Landing';
-import Login from './Login';
-import Signup from './Signup';
-import User from './User';
-import About from './About';
-import Explore from './Explore';
-import { Routes, Route } from 'react-router-dom'
+import Header from './Components/Header';
+import Landing from './Components/Landing';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
+import User from './Components/User';
+import About from './Components/About';
+import Explore from './Components/Explore';
+import { Route, Routes } from 'react-router-dom';
 import { useState} from 'react'
 import { useContext} from 'react';
-import {LoggedInProvider} from './LoggedInContext';
-import { LoginContext } from './LoggedInContext';
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import {LoggedInProvider} from './Components/LoggedInContext';
+import { LoginContext } from './Components/LoggedInContext';
 
 
 function App() {
