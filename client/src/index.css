@@ -1,13 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo|Open+Sans|Quicksand|Permanent+Marker');
+
+
 body {
+font-family: 'Open Sans';
+height: 100vh;
+border: solid blue 3px;
+display: block;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.form-div {
+  display: block;
+}
+
+.header-bar{
+  border: solid, #e9d0b4;
+  background-color: #EBECEC;
+  padding-bottom: 25px;
+  padding-top: 30px;
+  margin-top: 0px;
+  height: 70px
+}
+
+.landing-page{
+  border: solid black 2px;
+  /* background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); */
+  background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2103&q=80');
+  padding-top: 1400px;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.login-page {
+  background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+  padding-top: 1400px;
+  background-repeat: no-repeat;
+}
+
+.form-div {
+  position: fixed;
+  display: center;
+  bottom: 50vh;
+  left: 50vh;
+}
+
+.welcome-message {
+  font-size: 40px;
+  font-weight: 70;
+  letter-spacing: .1em;
+  font-family: 'Open Sans';
+  color: #EBECEC;
+  background-color: transparent;
+  bottom: 40vh;
+  left: 50vw;
+  position: fixed;
+  display: center;
+  /* min-height: 100vh; doesn't do anything*/
+}
+
+/* .explore-btn {
+  bottom: 40vw;
+  left: 50vw;
+  display: center;
+  position: fixed;
+  font-family: 'Open Sans';
+} */
