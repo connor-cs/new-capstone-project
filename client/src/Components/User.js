@@ -61,8 +61,9 @@ export default function User() {
       .then(res => {
         if (res.ok) {
           res.json()
-           setLoggedIn(true)
-        //   navigate('/explore')
+            .then(data => console.log(data))
+          setLoggedIn(true)
+          navigate('/explore')
         }
         else {
           res.json()
@@ -76,17 +77,17 @@ export default function User() {
     <div className='user-container'>
       <h2>Welcome {userData.username} </h2>
       <button onClick={handleDeleteClick}>Delete account</button>
-      
+
       <div className='update-form'>
         <form onSubmit={handleUpdateSubmit}>
-        <label>Enter new username:</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}></input>
-        <label>Enter new password:</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-        <button type="submit">Update</button>
-      </form>
-    </div>
-      
+          <label>Enter new username:</label>
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}></input>
+          <label>Enter new password:</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+          <button type="submit">Update</button>
+        </form>
+      </div>
+
       {errors ? <div>errors: {errors}</div> : null}
     </div>
 
