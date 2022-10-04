@@ -38,14 +38,12 @@ function App() {
           <Route exact path='/login' element={<Login />}></Route>
 
           <Route exact path='/signup' element={<Signup />} ></Route>
-          
-          
+
           <Route exact path='/explore' element={<Explore />}></Route>
-        
 
           <Route exact path='/about' element={<About />}></Route>
 
-          <Route exact path='/account' element = {<User />}></Route>
+          <Route path='/account/:id' element = {<User />}></Route>
 
           {/* <Route exact path = '/trails' element={<TrailsContainer/>}></Route> */}
 

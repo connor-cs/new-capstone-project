@@ -12,9 +12,6 @@ export default function Login() {
 
   // console.log(LoginContext == true)
   
-  
-
-  
   return (
     
     <main className="login-page">
@@ -24,9 +21,6 @@ export default function Login() {
       {/* {signedIn? "TEST you are signed in" : " TEST signin now"} */}
       {/* {errors ? errors.map(e => <div>{e[0] + ': ' + e[1]}</div>) : null} */}
     </main>
-    
-    //display map over errors array
-    //set timeout to display errors, then reset state back to empty array, trigger rerender
 
   );
 }

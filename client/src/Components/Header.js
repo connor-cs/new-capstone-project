@@ -16,7 +16,7 @@ export default function Header() {
             <NavLink to="/explore">Explore</NavLink>
             <NavLink to="/">Good Hikes</NavLink>
             <NavLink to="/login">{loggedIn ? "Logout" : "Login"}</NavLink>
-            {loggedIn ? <NavLink to="/account">Account</NavLink> : <NavLink to="/signup">Signup</NavLink>}
+            {loggedIn ? <NavLink to="/account/:id">Account</NavLink> : <NavLink to="/signup">Signup</NavLink>}
             
         </header>
     )
