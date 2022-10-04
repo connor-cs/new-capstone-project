@@ -22,7 +22,6 @@ class UsersController < ApplicationController
         user.destroy
         session.delete :user_id
         head :no_content
-        render status: :ok
     end
 
     private

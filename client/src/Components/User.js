@@ -40,7 +40,7 @@ export default function User() {
           res.json()
             .then(setLoggedIn(false))
             .then(setUser(null))
-            .then(navigate('/landing'))
+            .then(navigate('/'))
         }
         else {
           res.json()
