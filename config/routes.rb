@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
   
+  patch '/user/:id', to: "users#update"
   get 'user/:id', to: "users#show"
   delete 'user/:id', to: "users#destroy"
-  
   post '/signup', to: "users#create"
-  post '/trails', to: "trails#show"
+  
+  post '/trails', to: "trails#get_trails"
 
 end

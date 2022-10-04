@@ -23,7 +23,7 @@ export default function Signup() {
         if (res.ok) {
           res.json()
           setLoggedIn(true)
-          navigate('/explore')
+          navigate('/')
         }
         else {
           res.json()
@@ -43,7 +43,7 @@ export default function Signup() {
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
         <button type="submit">Signup</button>
       </form>
-      {errors ? errors.map(e => <div>{e}</div>) : null}
+      {errors ? errors : null}
     </main>
   );
 }

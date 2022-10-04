@@ -4,8 +4,10 @@
 body {
 font-family: 'Open Sans';
 height: 100vh;
+width: 100vw;
 border: solid blue 3px;
 display: block;
+
 }
 
 * {
@@ -36,10 +38,12 @@ code {
   border: solid black 2px;
   /* background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); */
   background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2103&q=80');
-  padding-top: 1400px;
+  /* padding-top: 1400px; */
   background-repeat: no-repeat;
   opacity: 0.9;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
 }
 
 .login-page {

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function TrailsContainer({errors, trails}) {
 const trailsResults = trails.map(trail=> {
-    <TrailCard trail={trail} />
+    return <TrailCard trail={trail} />
 })
     return (
         <div>

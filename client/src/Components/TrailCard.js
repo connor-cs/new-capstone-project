@@ -5,6 +5,8 @@ export default function TrailCard({trail}) {
   function handleClick(){
     
   }
+
+  console.log(trail)
   
   return (
     
