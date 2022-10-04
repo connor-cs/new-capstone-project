@@ -262,6 +262,10 @@ export default function getStateId(stateInput) {
     }
     }
 
+    if (stateInput==="all") {
+      return states
+    }
+
     return states[stateInput].id
 }
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import SelectUSState from 'react-select-us-states'
 import TrailsContainer from './TrailsContainer'
 import getStateId from './HelperActions/GetStateId'
 import Map from './Map'
@@ -23,8 +22,10 @@ export default function Explore() {
     const stateCopy = {
       ...userSearch
     }
-    stateCopy.state = getStateId(e)
+    // debugger
+    stateCopy.state = getStateId(e.target.value)
     setUserSearch(stateCopy)
+    // console.log("statecopy", stateCopy)
   }
 
 
@@ -47,14 +48,33 @@ export default function Explore() {
       .then(res => {
         if (res.ok) {
           res.json()
-            .then(data => setTrails([...data]))
-            .then(console.log("current trails:", trails))
+          .then(data=>{
+            console.log("data from fetch:", data)
+            setTrails([data])
+        })
         }
         else {
           res.json()
             .then(errors => setErrors([...errors.error]))
         }
       })
+  }
+
+  function renderOptions() {
+    const allstates = getStateId("all")
+    const stateNames = []
+    // console.log(allstates)
+    for (let state in allstates){
+      // console.log(allstates[state])
+      // if (state==="AL"){
+      //   stateNames.push(<option defaultValue={allstates[state].abbreviation}key={allstates[state].id}>{allstates[state].name}</option>)
+      // }
+      // else{
+        stateNames.push(<option value={allstates[state].abbreviation}key={allstates[state].id}>{allstates[state].name}</option>)
+      
+      
+    }
+    return stateNames
   }
 
 
@@ -64,7 +84,7 @@ export default function Explore() {
       <div>
         <form onSubmit={onSubmit}>
           <input type="text" name="city" value={userSearch.city} placeholder="City" onChange={handleChange}></input>
-          <SelectUSState placeholder="state" name="state" value={userSearch.state} onChange={stateInput} />
+          <select onChange={stateInput}>{renderOptions()}</select>
           <label>Max distance:</label>
           <input type="number" name="distance" onChange={handleChange}></input>
           <button>submit</button>
