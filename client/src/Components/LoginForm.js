@@ -17,7 +17,7 @@ export default function LoginForm() {
     const { username, password } = formData
     
     const navigate = useNavigate()
-    const {setLoggedIn, loggedIn} = useContext(LoginContext)
+    const {setLoggedIn, loggedIn, user, setUser} = useContext(LoginContext)
     
     
     function handleChange(e) {
@@ -40,7 +40,7 @@ export default function LoginForm() {
         body: JSON.stringify(user)
       })
         .then(res => res.json())
-        .then(data=>console.log(data))
+        .then(data=>setUser(data))
         
         //change signed in context here, then redirect to explore page
         .then(()=>setLoggedIn(!loggedIn))

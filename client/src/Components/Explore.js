@@ -47,7 +47,7 @@ export default function Explore() {
       .then(res => {
         if (res.ok) {
           res.json()
-            .then(data => setTrails([data]))
+            .then(data => setTrails([...data]))
             .then(console.log("current trails:", trails))
         }
         else {
@@ -72,7 +72,7 @@ export default function Explore() {
       </div>
 
       <div className='results'>
-          {trails? <TrailsContainer trails={trails} errors={errors}/> : null}
+          {trails.length>0 ? <TrailsContainer trails={trails} errors={errors}/> : null}
       </div>
 
       <div className='map-container'>

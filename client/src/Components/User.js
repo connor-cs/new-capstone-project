@@ -18,11 +18,11 @@ export default function User() {
     //GET to user
     fetch(`/user/${id}`)
       .then(res=>res.json())
-      .then(data=>setUserData)
+      .then(data=>setUserData(data))
       // .then(res=>console.log("username", res.username))
       // .then(data=>(console.log("username", data.username)))
       // .then(data =>console.log(data))
-  })
+  },[])
 
   function handleDeleteClick(){
     //DELETE to user
@@ -45,7 +45,7 @@ export default function User() {
 
   return (
     <div className='user-container'>
-      <h2>Welcome {userData} </h2>
+      <h2>Welcome {userData.username} </h2>
       <button onClick={handleDeleteClick}>Delete account</button>
       {errors ? <div>{errors}</div> : null}
     </div>

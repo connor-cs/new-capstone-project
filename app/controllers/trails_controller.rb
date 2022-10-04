@@ -1,6 +1,6 @@
 class TrailsController < ApplicationController
 
-  def show
+  def get_trails
       trails = Trail.find_by(state: params[:state], city: params[:city])
       if trails
           render json: trails, status: :ok
@@ -9,10 +9,10 @@ class TrailsController < ApplicationController
       end
   end
 
-  def index
-  trails = Trail.all
-  render json: trails
-  end
+#   def index
+#   trails = Trail.all
+#   render json: trails
+#   end
 
   
   private

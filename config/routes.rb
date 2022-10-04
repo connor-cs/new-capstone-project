@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   delete 'user/:id', to: "users#destroy"
   
   post '/signup', to: "users#create"
-  post '/trails', to: "trails#show"
+  post '/trails', to: "trails#get_trails"
 
 end
