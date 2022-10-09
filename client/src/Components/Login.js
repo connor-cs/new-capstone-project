@@ -3,7 +3,7 @@ import { useState, createContext, useContext } from "react"
 import { useNavigate } from "react-router-dom";
 import {LoginContext} from "./LoggedInContext"
 import LoginForm from "./LoginForm";
-import LogoutButton from "./LogoutButton";
+import LogoutButton from "./HelperActions/LogoutButton";
 
 
 export default function Login() {

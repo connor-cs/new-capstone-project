@@ -1,9 +1,10 @@
 import React from 'react'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 export default function TrailCard({trail}) {
   
   function handleClick(){
-    
+    console.log("click city")
   }
 
   console.log(trail)
@@ -13,10 +14,11 @@ export default function TrailCard({trail}) {
     
     <div key={trail.id} className={"trailcard"}>
       <h2>{trail.name}</h2>
-      <p>{trail.length}miles</p>
+      <p>Length: {trail.length} miles</p>
       <p>{trail.description}</p>
+      <p>Location: {trail.directions}</p>
       <p>{trail.city} {trail.state}</p>
-      <button onClick={handleClick}>♥</button>
+      <FavoriteBorderIcon onClick={handleClick}/>
     </div>
   )
 }
