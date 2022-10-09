@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoginContext } from './LoggedInContext'
+import { LoginContext } from '../LoggedInContext'
 import { useContext } from 'react'
 
 export default function LogoutButton() {

@@ -98,9 +98,7 @@ export default function Explore() {
       <div className='results'>
         {trails.length > 0 ? <TrailsContainer trails={trails} errors={errors} /> : null}
       </div>
-      <Button variant="contained" href="#contained-buttons">
-        Link
-      </Button>
+      
 
       <div className='map-container'>
         {/* <Map /> */}
