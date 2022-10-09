@@ -3,7 +3,8 @@ import { useState } from 'react'
 import TrailsContainer from './TrailsContainer'
 import getStateId from './HelperActions/GetStateId'
 import Map from './Map'
-
+import { useLoadScript } from '@react-google-maps/api'
+import { Button } from '@mui/material'
 
 
 export default function Explore() {
@@ -48,10 +49,10 @@ export default function Explore() {
       .then(res => {
         if (res.ok) {
           res.json()
-          .then(data=>{
-            console.log("data from fetch:", data)
-            setTrails([data])
-        })
+            .then(data => {
+              console.log("data from fetch:", data)
+              setTrails([data])
+            })
         }
         else {
           res.json()
@@ -64,19 +65,22 @@ export default function Explore() {
     const allstates = getStateId("all")
     const stateNames = []
     // console.log(allstates)
-    for (let state in allstates){
+    for (let state in allstates) {
       // console.log(allstates[state])
       // if (state==="AL"){
       //   stateNames.push(<option defaultValue={allstates[state].abbreviation}key={allstates[state].id}>{allstates[state].name}</option>)
       // }
       // else{
-        stateNames.push(<option value={allstates[state].abbreviation}key={allstates[state].id}>{allstates[state].name}</option>)
-      
-      
+      stateNames.push(<option value={allstates[state].abbreviation} key={allstates[state].id}>{allstates[state].name}</option>)
+
+
     }
     return stateNames
   }
 
+  // const {isLoaded} =useLoadScript({
+  //   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  // })
 
   return (
     <main className='explore-page'>
@@ -92,10 +96,14 @@ export default function Explore() {
       </div>
 
       <div className='results'>
-          {trails.length>0 ? <TrailsContainer trails={trails} errors={errors}/> : null}
+        {trails.length > 0 ? <TrailsContainer trails={trails} errors={errors} /> : null}
       </div>
+      <Button variant="contained" href="#contained-buttons">
+        Link
+      </Button>
 
       <div className='map-container'>
+        {/* <Map /> */}
       </div>
 
     </main>

@@ -14,7 +14,9 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fontsource/roboto": "^4.5.8",
-    "@mui/material": "^5.10.7",
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "@mui/material": "^5.10.8",
+    "@react-google-maps/api": "^2.13.1",
     "kill-port": "^2.0.1"
   }
 }
