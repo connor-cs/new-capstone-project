@@ -36,7 +36,7 @@ export default function User() {
   useEffect(() => {
     fetch("/favorites").then((res) => {
       if (res.ok) {
-        res.json().then((data) => setUserFavs([data]));
+        res.json().then((data) => console.log('favdata', data));
       } else {
         res.json().then((errors) => setErrors([errors.error]));
       }

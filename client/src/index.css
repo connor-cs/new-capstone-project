@@ -55,6 +55,10 @@ code {
   background-repeat: no-repeat;
 }
 
+.trailcard {
+  color:#EBECEC
+}
+
 .form-div {
   position: fixed;
   display: center;
