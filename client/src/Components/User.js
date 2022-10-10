@@ -4,12 +4,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { LoginContext } from "./LoggedInContext";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
+import UpgradeIcon from '@mui/icons-material/UpgradeRounded';
+import TrailCard from "./TrailCard";
 
 export default function User() {
   const { loggedIn, setLoggedIn, user, setUser } = useContext(LoginContext);
   const [errors, setErrors] = useState([]);
   const [userFavs, setUserFavs] = useState([]);
   const [userData, setUserData] = useState("");
+  const [update, setUpdate] = useState(false)
   const navigate = useNavigate();
   const params = useParams();
   const { id } = params;
@@ -20,7 +23,7 @@ export default function User() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    //GET to user
+    //GET to users
     fetch(`/user/${id}`)
       .then((res) => res.json())
       .then((data) => setUserData(data));
@@ -28,6 +31,17 @@ export default function User() {
     // .then(data=>(console.log("username", data.username)))
     // .then(data =>console.log(data))
   }, []);
+
+  //GET to favorites
+  useEffect(() => {
+    fetch("/favorites").then((res) => {
+      if (res.ok) {
+        res.json().then((data) => setUserFavs([data]));
+      } else {
+        res.json().then((errors) => setErrors([errors.error]));
+      }
+    });
+  });
 
   function handleDeleteClick() {
     //DELETE to user
@@ -82,7 +96,17 @@ export default function User() {
         Delete Account
       </Button>
 
-      <div className="update-form">
+      <Button
+        onClick={()=>setUpdate(!update)}
+        variant="outlined"
+        size="small"
+        fontSize="small"
+        startIcon={<UpgradeIcon />}
+      >
+        Update Account Info
+      </Button>
+
+      {update ? <div className="update-form">
         <form onSubmit={handleUpdateSubmit}>
           <label>Enter new username:</label>
           <input
@@ -98,11 +122,16 @@ export default function User() {
           ></input>
           <button type="submit">Update</button>
         </form>
-      </div>
+      </div> : null}
 
       {errors ? <div>errors: {errors}</div> : null}
-    </div>
 
-    //render user favorites
+      <div>
+        {userFavs.map(fav => {
+          console.log("fav", fav)
+        return <TrailCard key={fav.id} trail={fav} />
+      })}
+      </div>
+    </div>
   );
 }

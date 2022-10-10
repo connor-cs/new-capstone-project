@@ -12,8 +12,7 @@ export default function Explore() {
   const [userSearch, setUserSearch] = useState(
     {
       city: '',
-      state: '',
-      distance: ''
+      state: ''
     }
   )
   const [errors, setErrors] = useState([])
@@ -23,10 +22,8 @@ export default function Explore() {
     const stateCopy = {
       ...userSearch
     }
-    // debugger
     stateCopy.state = getStateId(e.target.value)
     setUserSearch(stateCopy)
-    // console.log("statecopy", stateCopy)
   }
 
 
@@ -78,9 +75,7 @@ export default function Explore() {
     return stateNames
   }
 
-  // const {isLoaded} =useLoadScript({
-  //   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-  // })
+  
 
   return (
     <main className='explore-page'>
@@ -89,8 +84,8 @@ export default function Explore() {
         <form onSubmit={onSubmit}>
           <input type="text" name="city" value={userSearch.city} placeholder="City" onChange={handleChange}></input>
           <select onChange={stateInput}>{renderOptions()}</select>
-          <label>Max distance:</label>
-          <input type="number" name="distance" onChange={handleChange}></input>
+          {/* <label>Max distance:</label>
+          <input type="number" name="distance" onChange={handleChange}></input> */}
           <button>submit</button>
         </form>
       </div>

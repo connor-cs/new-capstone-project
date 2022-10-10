@@ -1,13 +1,39 @@
 import React from 'react'
+import { useContext, useState } from 'react';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { LoginContext } from './LoggedInContext';
 
 export default function TrailCard({trail}) {
   
-  function handleClick(){
-    console.log("click city")
+  const [errors, setErrors] = useState([])
+  const {loggedIn, user} = useContext(LoginContext)
+  const newFav = {
+    trail_id: trail.id,
+    user_id: user.id
   }
 
-  console.log(trail)
+  function handleFavClick(){
+    console.log('newfav:', newFav)
+    fetch('/favorites', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newFav)
+    })
+    .then(res=> {
+      if (res.ok) {
+        res.json()
+        .then(data=>{
+          console.log('data: ', data)
+        })
+      }
+      else {
+        res.json()
+        .then(errors=>setErrors([...errors.error]))
+      }
+    })
+  }
+
+  
   
   return (
     
@@ -18,7 +44,7 @@ export default function TrailCard({trail}) {
       <p>{trail.description}</p>
       <p>Location: {trail.directions}</p>
       <p>{trail.city} {trail.state}</p>
-      <FavoriteBorderIcon onClick={handleClick}/>
+      {loggedIn ? <FavoriteBorderIcon onClick={handleFavClick}/> : null}
     </div>
   )
 }
