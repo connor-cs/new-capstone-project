@@ -29,7 +29,9 @@ export default function TrailCard({ trail }) {
           console.log("data: ", data);
         });
       } else {
-        res.json().then((errors) => setErrors([...errors.error]));
+        res.json()
+        .then(data => setErrors([...data.errors]))
+        console.log(errors);
       }
     });
   }

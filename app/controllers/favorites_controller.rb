@@ -6,9 +6,6 @@ class FavoritesController < ApplicationController
   end
 
   def show
-    if current_user
-      render json: current_user.Favorite.all
-    debugger
     
   end
 

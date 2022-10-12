@@ -8,12 +8,6 @@ class TrailsController < ApplicationController
           render json: { error: "Nothing found" }, status: :not_found
       end
   end
-
-#   def index
-#   trails = Trail.all
-#   render json: trails
-#   end
-
   
   private
 
