@@ -9,9 +9,6 @@ border: solid blue 3px;
 display: block;
 }
 
-trail-card{
-  border: solid, black, 2px
-}
 
 * {
   box-sizing: border-box;
@@ -56,7 +53,8 @@ code {
 }
 
 .trailcard {
-  color:#EBECEC
+  color:#EBECEC;
+  padding-left: 10px;
 }
 
 .form-div {

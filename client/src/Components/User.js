@@ -41,7 +41,7 @@ export default function User() {
         res.json().then((errors) => setErrors([errors.error]));
       }
     });
-  });
+  },[]);
 
   function handleDeleteClick() {
     //DELETE to user
