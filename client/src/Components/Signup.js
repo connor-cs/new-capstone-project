@@ -27,8 +27,9 @@ export default function Signup() {
         }
         else {
           res.json()
-            .then(errors => setErrors([...errors.error]))
+            .then(data => setErrors([...data.errors]))
             .then(console.log(errors))
+            // .then(data=>console.log(data))
         }
       })
   }

@@ -9,9 +9,6 @@ border: solid blue 3px;
 display: block;
 }
 
-trail-card{
-  border: solid, black, 2px
-}
 
 * {
   box-sizing: border-box;
@@ -53,6 +50,11 @@ code {
   background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
   padding-top: 1400px;
   background-repeat: no-repeat;
+}
+
+.trailcard {
+  color:#EBECEC;
+  padding-left: 10px;
 }
 
 .form-div {

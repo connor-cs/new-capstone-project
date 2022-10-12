@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # get '/hello', to: 'application#hello_world'
 
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
@@ -9,6 +8,9 @@ Rails.application.routes.draw do
   get 'user/:id', to: "users#show"
   delete 'user/:id', to: "users#destroy"
   post '/signup', to: "users#create"
+
+  post '/favorites', to: "favorites#create"
+  get '/favorites', to: "favorites#show"
   
   post '/trails', to: "trails#get_trails"
 
