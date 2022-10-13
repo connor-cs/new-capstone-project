@@ -11,10 +11,13 @@ import { useState} from 'react'
 import { useContext} from 'react';
 import {LoggedInProvider} from './Components/LoggedInContext';
 import { LoginContext } from './Components/LoggedInContext';
-import {useLoadScript} from '@react-google-maps/api'
+import {useLoadScript, useJsApiLoader} from '@react-google-maps/api'
 
 function App() {
-  
+
+  // const {isLoaded} =useJsApiLoader({
+  //   googleMapsApiKey: 'AIzaSyAgxJjemhhztx1JE2lknwHDE8y_a9T6vcE'
+  // })
 //   const LoginContext = createContext() 
   
 //   const isLoggedIn = useState({
@@ -32,6 +35,8 @@ function App() {
 
  
   return (
+
+    
     <div className='App'>
       <LoggedInProvider>
         <Header />

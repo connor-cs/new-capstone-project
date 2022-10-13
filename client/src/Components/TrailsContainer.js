@@ -7,7 +7,7 @@ const trailsResults = trails.map(trail=> {
     return <TrailCard trail={trail} />
 })
     return (
-        <div>
+        <div className='trailscontainer'>
             {trailsResults}
             {errors ? errors : null}
         </div>

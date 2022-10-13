@@ -9,6 +9,10 @@ border: solid blue 3px;
 display: block;
 }
 
+.map-container {
+  position: absolute;
+  right: 0
+}
 
 * {
   box-sizing: border-box;
@@ -55,6 +59,10 @@ code {
 .trailcard {
   color:#EBECEC;
   padding-left: 10px;
+}
+
+.trailscontainer {
+  left: 10
 }
 
 .form-div {
