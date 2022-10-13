@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react'
 import TrailsContainer from './TrailsContainer'
 import getStateId from './HelperActions/GetStateId'
 import Map from './Map'
-import { useLoadScript, useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
+import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
 import { Button } from '@mui/material'
 /* eslint-disable no-undef */
 
@@ -19,7 +19,7 @@ export default function Explore() {
   )
   const [errors, setErrors] = useState([])
   const [trails, setTrails] = useState([])
-  const [map, setMap] = React.useState(true)
+  const [map, setMap] = useState(true)
 
   function stateInput(e) {
     const stateCopy = {
@@ -80,37 +80,37 @@ export default function Explore() {
     return stateNames
   }
 
+
+
+  console.log(process.env)
+
+  //Google maps stuff:
   const containerStyle = {
-    width: '400px',
-    height: '400px',
-
+    width: '700px',
+    height: '600px',
   };
-  
   const center = {
-    lat: -3.745,
-    lng: -38.523
+    lat: 38.8,
+    lng: -77
   };
-  console.log(process.env.REACT_APP_GOOGLE_MAPS_KEY)
 
-    const { isLoaded } = useJsApiLoader({
-      id: 'google-map-script',
-      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY
-    })
-  
-   
-    
-  
-    const onLoad = useCallback(function callback(map) {
-      const bounds = new window.google.maps.LatLngBounds(center);
-      map.fitBounds(bounds);
-      setMap(map)
-    }, [])
-  
-    const onUnmount = useCallback(function callback(map) {
-      setMap(null)
-    }, [])
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: "AIzaSyAgxJjemhhztx1JE2lknwHDE8y_a9T6vcE"
+  })
 
+  const onLoad = useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds(center);
+    map.fitBounds(bounds);
+    setMap(map)
+  }, [])
 
+  const onUnmount = useCallback(function callback(map) {
+    setMap(null)
+  }, [])
+  //Google maps stuff ^^
+
+  
   return (
     <main className='explore-page'>
 
@@ -118,8 +118,6 @@ export default function Explore() {
         <form onSubmit={onSubmit}>
           <input type="text" name="city" value={userSearch.city} placeholder="City" onChange={handleChange}></input>
           <select onChange={stateInput}>{renderOptions()}</select>
-          {/* <label>Max distance:</label>
-          <input type="number" name="distance" onChange={handleChange}></input> */}
           <button>submit</button>
         </form>
       </div>
@@ -133,12 +131,14 @@ export default function Explore() {
 
       <div className='map-container'>
         {isLoaded ? <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      ></GoogleMap> : null}
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={50}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+        >
+          <Marker position={{ lat: 38.9072, lng: -77.03 }} />
+        </GoogleMap> : null}
       </div>
 
     </main>
