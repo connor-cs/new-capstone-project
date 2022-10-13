@@ -1,3 +1,17 @@
+/* update trailcard to send more trail data
+favorites table must be updated
+fav_params method must be updated
+do I need to drop db first before running a migration? */
+
+
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }
