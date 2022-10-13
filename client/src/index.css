@@ -20,6 +20,8 @@ display: block;
   margin: 0;
 }
 
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -41,19 +43,27 @@ code {
 .landing-page{
   border: solid black 2px;
   /* background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); */
-  background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2103&q=80');
+  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash9000.jpg');
   /* padding-top: 1400px; */
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
+  background-size: contain; /*
   opacity: 0.9;
   width: 100vw;
+  /* background-size: cover; */
   height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
 .login-page {
-  background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/john-lee-oMneOBYhJxY-unsplash.jpg');
   padding-top: 1400px;
-  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .trailcard {
@@ -63,6 +73,23 @@ code {
 
 .trailscontainer {
   left: 10
+}
+
+.signup-page {
+  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash3.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.about-page {
+  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash0.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .form-div {
