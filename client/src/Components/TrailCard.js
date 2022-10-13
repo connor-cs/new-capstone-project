@@ -43,8 +43,8 @@ export default function TrailCard({ trail }) {
   }
 
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: blueGrey[900] }}>
-      <CardHeader title={trail.name} sx={{bgcolor: blueGrey[500]}} subheader={`Length: ${trail.length} miles`}></CardHeader>
+    <Card key = {trail.id} sx={{ maxWidth: 345, bgcolor: blueGrey[800] }}>
+      <CardHeader title={trail.name} sx={{bgcolor: blueGrey[200]}} subheader={`Length: ${trail.length} miles`}></CardHeader>
       <div key={trail.id} className="trailcard">
         <CardContent>
         {trail.description}
@@ -53,7 +53,7 @@ export default function TrailCard({ trail }) {
         <p>
           {trail.city} {trail.state}
         </p>
-        {loggedIn ? <IconButton onClick={handleFavClick}><FavoriteIcon /></IconButton> : null}
+        {loggedIn ? <IconButton sx={{color: "red"}}onClick={handleFavClick}><FavoriteIcon /></IconButton> : null}
       </div>
     </Card>
   );
