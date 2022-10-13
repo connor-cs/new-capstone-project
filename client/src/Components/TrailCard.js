@@ -9,12 +9,18 @@ import { blueGrey } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { LoginContext } from "./LoggedInContext";
 
+//update this with more data
 export default function TrailCard({ trail }) {
   const [errors, setErrors] = useState([]);
   const { loggedIn, user } = useContext(LoginContext);
   const newFav = {
     trail_id: trail.id,
     user_id: user.id,
+    state_id: trail.state_id,
+    name: trail.name,
+    city: trail.city,
+    description: trail.description,
+    length: trail.length
   };
 
   function handleFavClick() {

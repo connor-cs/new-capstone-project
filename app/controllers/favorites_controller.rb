@@ -6,11 +6,13 @@ class FavoritesController < ApplicationController
   end
 
   def show
-    
+    render json: current_user.favorites, status: :ok
   end
 
   def destroy
-    fav = Favorite.find
+    favs = current_user.favorites
+    favs.clear
+    head :no_content
   end
 
   private
