@@ -96,6 +96,9 @@ export default function Explore() {
     lng: -77
   };
 
+  const zoom = 20
+
+  console.log('process.env:', process.env)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAgxJjemhhztx1JE2lknwHDE8y_a9T6vcE"
@@ -142,7 +145,7 @@ export default function Explore() {
         {isLoaded ? <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={50}
+          zoom={zoom}
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
