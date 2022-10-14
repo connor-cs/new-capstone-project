@@ -2,21 +2,12 @@
   "name": "new-capstone-project",
   "description": "Build scripts for Heroku",
   "engines": {
-    "node": ">= 14"
+    "node": "16.x"
   },
   "scripts": {
     "build": "npm install --prefix client && npm run build --prefix client",
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@fontsource/roboto": "^4.5.8",
-    "@googlemaps/react-wrapper": "^1.1.35",
-    "@mui/material": "^5.10.8",
-    "@react-google-maps/api": "^2.13.1",
-    "kill-port": "^2.0.1"
   }
 }
