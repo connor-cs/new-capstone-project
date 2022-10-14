@@ -17,6 +17,7 @@ export default function User() {
   const params = useParams();
   const { id } = params;
   console.log("user id:", id);
+  console.log("user from usercomponent", user)
 
   //state for update
   const [password, setPassword] = useState("");
@@ -30,23 +31,24 @@ export default function User() {
     // .then(res=>console.log("username", res.username))
     // .then(data=>(console.log("username", data.username)))
     // .then(data =>console.log(data))
+    
   }, []);
 
   //GET to favorites
-  useEffect(() => {
-    fetch("/favorites")
-    .then((res) => {
-      if (res.ok) {
-        res.json()
-        //this is FINALLY working but it doesn't include any data
-        // .then((data) => console.log('favdata', data))
-        .then(data => setUserFavs(data))
-        .then(console.log(userFavs))
-      } else {
-        res.json().then((errors) => setErrors([errors.error]));
-      }
-    });
-  },[]);
+  // useEffect(() => {
+  //   fetch("/favorites")
+  //   .then((res) => {
+  //     if (res.ok) {
+  //       res.json()
+  //       //this is FINALLY working but it doesn't include any data
+  //       // .then((data) => console.log('favdata', data))
+  //       .then(data => setUserFavs(data))
+  //       .then(console.log('userfavs', userFavs))
+  //     } else {
+  //       res.json().then((errors) => setErrors([errors.error]));
+  //     }
+  //   });
+  // },[]);
 
   function handleDeleteClick() {
     //DELETE to user
@@ -132,7 +134,7 @@ export default function User() {
       {errors ? <div>errors: {errors}</div> : null}
 
       <div>
-        {userFavs.map(fav => {
+        {user.favorite_trails.map(fav => {
           console.log("fav", fav)
         return <TrailCard key={fav.id} trail={fav} />
       })}
