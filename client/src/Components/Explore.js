@@ -2,10 +2,8 @@ import React from 'react'
 import { useState, useCallback } from 'react'
 import TrailsContainer from './TrailsContainer'
 import getStateId from './HelperActions/GetStateId'
-import Map from './Map'
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
 import { Button } from '@mui/material'
-/* eslint-disable no-undef */
 
 
 export default function Explore() {
@@ -80,9 +78,13 @@ export default function Explore() {
     return stateNames
   }
 
-
-
-  console.log(process.env)
+  // console.log(trails)
+  // // console.log(process.env)
+  // const trailsList = (trails) => {
+  //   for (let x in trails)
+  //   console.log('log', x[0].name)
+  
+  // trailsList(trails)
 
   //Google maps stuff:
   const containerStyle = {
@@ -94,9 +96,12 @@ export default function Explore() {
     lng: -77
   };
 
+  const zoom = 20
+
+  console.log('process.env:', process.env)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyAgxJjemhhztx1JE2lknwHDE8y_a9T6vcE"
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY
   })
 
   const onLoad = useCallback(function callback(map) {
@@ -110,8 +115,15 @@ export default function Explore() {
   }, [])
   //Google maps stuff ^^
 
+  // console.log('trails', trails[0].length)
   
-  return (
+//   const trailMarkers = () {
+//     for (let i =0; i <trails.length; i++) {
+//       return <Marker
+//   }
+// }
+  
+ return (
     <main className='explore-page'>
 
       <div>
@@ -133,11 +145,11 @@ export default function Explore() {
         {isLoaded ? <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={50}
+          zoom={zoom}
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
-          <Marker position={{ lat: 38.9072, lng: -77.03 }} />
+          {/* <Marker position={{ lat: 38.9072, lng: -77.03 }} /> */}
         </GoogleMap> : null}
       </div>
 
