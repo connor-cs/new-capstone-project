@@ -18,6 +18,6 @@ class FavoritesController < ApplicationController
   private
 
   def fav_params
-    params.permit(:trail_id, :user_id, :state_id, :name, :city, :description, :length)
+    params.permit(:trail_id, :user_id)
   end
 end

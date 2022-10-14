@@ -3,5 +3,4 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   has_many :favorites
   has_many :trails, through: :favorites
-  
 end

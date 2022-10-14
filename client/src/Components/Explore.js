@@ -2,10 +2,8 @@ import React from 'react'
 import { useState, useCallback } from 'react'
 import TrailsContainer from './TrailsContainer'
 import getStateId from './HelperActions/GetStateId'
-import Map from './Map'
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
 import { Button } from '@mui/material'
-/* eslint-disable no-undef */
 
 
 export default function Explore() {
@@ -80,9 +78,13 @@ export default function Explore() {
     return stateNames
   }
 
-
-
-  console.log(process.env)
+  // console.log(trails)
+  // // console.log(process.env)
+  // const trailsList = (trails) => {
+  //   for (let x in trails)
+  //   console.log('log', x[0].name)
+  
+  // trailsList(trails)
 
   //Google maps stuff:
   const containerStyle = {
@@ -110,8 +112,15 @@ export default function Explore() {
   }, [])
   //Google maps stuff ^^
 
+  // console.log('trails', trails[0].length)
   
-  return (
+//   const trailMarkers = () {
+//     for (let i =0; i <trails.length; i++) {
+//       return <Marker
+//   }
+// }
+  
+ return (
     <main className='explore-page'>
 
       <div>
@@ -137,7 +146,7 @@ export default function Explore() {
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
-          <Marker position={{ lat: 38.9072, lng: -77.03 }} />
+          {/* <Marker position={{ lat: 38.9072, lng: -77.03 }} /> */}
         </GoogleMap> : null}
       </div>
 

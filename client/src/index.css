@@ -5,7 +5,6 @@ body {
 font-family: 'Open Sans';
 height: 100vh;
 width: 100vw;
-border: solid blue 3px;
 display: block;
 }
 
@@ -41,15 +40,11 @@ code {
 }
 
 .landing-page{
-  border: solid black 2px;
-  /* background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); */
   background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash9000.jpg');
-  /* padding-top: 1400px; */
-  /* background-repeat: no-repeat;
   background-size: contain; /*
-  opacity: 0.9;
   width: 100vw;
   /* background-size: cover; */
+  opacity: 0.9;
   height: 100vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -72,13 +67,23 @@ code {
 }
 
 .trailscontainer {
-  left: 10
+  left: 10;
+  padding-left: 10;
 }
 
 .signup-page {
   background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash3.jpg');
   background-size: cover;
   height: 100vh;
+}
+
+.user-container {
+  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash4.jpg');
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .about-page {
