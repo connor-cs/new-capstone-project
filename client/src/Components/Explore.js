@@ -101,7 +101,7 @@ export default function Explore() {
   console.log('process.env:', process.env)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyAgxJjemhhztx1JE2lknwHDE8y_a9T6vcE"
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY
   })
 
   const onLoad = useCallback(function callback(map) {
