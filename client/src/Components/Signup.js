@@ -9,7 +9,7 @@ export default function Signup() {
   const [errors, setErrors] = useState([])
   const [password, setPassword] = useState("")
   const [username, setUsername] = useState("")
-  const { setLoggedIn } = useContext(LoginContext)
+  const { setLoggedIn, user, setUser } = useContext(LoginContext)
   const navigate = useNavigate()
 
   function handleSubmit(e) {
@@ -22,6 +22,7 @@ export default function Signup() {
       .then(res => {
         if (res.ok) {
           res.json()
+          .then(data=>setUser(data))
           setLoggedIn(true)
           navigate('/')
         }

@@ -44,7 +44,7 @@ export default function LoginForm() {
         
         //change signed in context here, then redirect to explore page
         .then(()=>setLoggedIn(!loggedIn))
-        .then(()=>console.log(loggedIn))
+        .then(()=>console.log('logged in status:', loggedIn))
         .then(navigate('/explore'))
         
         .catch(error => setErrors(error))
