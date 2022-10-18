@@ -115,7 +115,7 @@ export default function Explore() {
   }, [])
   //Google maps stuff ^^
 
-  // console.log('trails', trails[0].length)
+console.log('trails', trails)
   
 //   const trailMarkers = () {
 //     for (let i =0; i <trails.length; i++) {
@@ -149,7 +149,7 @@ export default function Explore() {
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
-          {/* <Marker position={{ lat: 38.9072, lng: -77.03 }} /> */}
+          <Marker position={{ lat: 38.9072, lng: -77.03 }} />
         </GoogleMap> : null}
       </div>
 

@@ -36,7 +36,12 @@ code {
   padding-bottom: 25px;
   padding-top: 30px;
   margin-top: 0px;
-  height: 70px
+  height: 70px;
+  text-align: center;
+}
+
+.explore-page {
+  text-align: center;
 }
 
 .landing-page{
@@ -46,6 +51,7 @@ code {
   /* background-size: cover; */
   opacity: 0.9;
   height: 100vh;
+  text-align: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -55,6 +61,8 @@ code {
 .login-page {
   background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/john-lee-oMneOBYhJxY-unsplash.jpg');
   padding-top: 1400px;
+  text-align: center;
+  color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -75,6 +83,7 @@ code {
   background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash3.jpg');
   background-size: cover;
   height: 100vh;
+  text-align: center;
 }
 
 .user-container {
@@ -91,6 +100,8 @@ code {
   background-size: contain;
   background-repeat: no-repeat;
   height: 100vh;
+  text-align: center;
+  padding-top: 50px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -106,13 +117,14 @@ code {
 
 .welcome-message {
   font-size: 40px;
+  text-align: center;
   font-weight: 70;
   letter-spacing: .1em;
   font-family: 'Open Sans';
   color: #EBECEC;
   background-color: transparent;
   bottom: 40vh;
-  left: 50vw;
+  left: 40vw;
   position: fixed;
   display: center;
   /* min-height: 100vh; doesn't do anything*/

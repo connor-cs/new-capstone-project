@@ -28,10 +28,6 @@ export default function User() {
     fetch(`/user/${id}`)
       .then((res) => res.json())
       .then((data) => setUserData(data));
-    // .then(res=>console.log("username", res.username))
-    // .then(data=>(console.log("username", data.username)))
-    // .then(data =>console.log(data))
-    
   }, []);
 
   //GET to favorites
