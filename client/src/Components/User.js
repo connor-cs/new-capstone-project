@@ -28,13 +28,13 @@ export default function User() {
     fetch(`/user/${id}`)
       .then((res) => res.json())
       .then((data) => setUserData(data));
+      console.log(user)
     // .then(res=>console.log("username", res.username))
     // .then(data=>(console.log("username", data.username)))
     // .then(data =>console.log(data))
-    
   }, []);
 
-  //GET to favorites
+  //GET to favorites, this isn't needed any longer, but want to keep it for now
   // useEffect(() => {
   //   fetch("/favorites")
   //   .then((res) => {
@@ -90,6 +90,8 @@ export default function User() {
   }
 
   return (
+
+    
     <div className="user-container">
       <h2>Welcome {userData.username} </h2>
       {/* <button onClick={handleDeleteClick}>Delete account</button> */}
@@ -131,7 +133,7 @@ export default function User() {
         </form>
       </div> : null}
 
-      {errors ? <div>errors: {errors}</div> : null}
+      {/* {errors ? <div>errors: {errors}</div> : null} */}
 
       <div>
         {user.favorite_trails.map(fav => {

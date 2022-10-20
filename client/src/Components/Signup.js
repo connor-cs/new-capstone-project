@@ -30,7 +30,6 @@ export default function Signup() {
           res.json()
             .then(data => setErrors([...data.errors]))
             .then(console.log(errors))
-            // .then(data=>console.log(data))
         }
       })
   }

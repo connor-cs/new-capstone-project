@@ -18,12 +18,14 @@ export default function Explore() {
   const [errors, setErrors] = useState([])
   const [trails, setTrails] = useState([])
   const [map, setMap] = useState(true)
+  const [latLong, setlatLong] = useState({
+    lat: null, lng: null
+  })
 
   function stateInput(e) {
     const stateCopy = {
       ...userSearch
     }
-    // debugger
     stateCopy.state = getStateId(e.target.value)
     setUserSearch(stateCopy)
     // console.log("statecopy", stateCopy)
@@ -52,6 +54,9 @@ export default function Explore() {
             .then(data => {
               console.log("data from fetch:", data)
               setTrails([data])
+              console.log('longitude:', data.longitude)
+              setlatLong(latLong.lat = data.latitude, latLong.lng = data.longitude)
+              console.log('latLong:', latLong)
             })
         }
         else {
@@ -98,7 +103,6 @@ export default function Explore() {
 
   const zoom = 20
 
-  console.log('process.env:', process.env)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY
