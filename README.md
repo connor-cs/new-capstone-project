@@ -4,6 +4,9 @@ This is a React App that uses [Trail Api](https://rapidapi.com/trailapi/api/trai
 ## Video demo:
 https://youtu.be/hRHYUocD7as
 
+## To view the app:
+https://good-hikes-capstone.herokuapp.com/
+
 ## Technologies used:
 A front-end built with React with a Google Maps integration
 Bootstrap and Material UI

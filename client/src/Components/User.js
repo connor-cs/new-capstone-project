@@ -93,7 +93,7 @@ export default function User() {
 
     
     <div className="user-container">
-      <h2>Welcome {userData.username} </h2>
+      <h2>Welcome, {userData.username} </h2>
       {/* <button onClick={handleDeleteClick}>Delete account</button> */}
       <Button
         onClick={handleDeleteClick}
