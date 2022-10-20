@@ -2,7 +2,8 @@ class FavoritesController < ApplicationController
 #@currnet_user.favs
   def create
     fav = Favorite.create!(fav_params)
-    render json: fav, status: :ok
+    user=User.find(fav_params["user_id"])
+    render json: user.trails, status: :ok
   end
 
   def show

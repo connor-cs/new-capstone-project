@@ -12,7 +12,7 @@ import { LoginContext } from "./LoggedInContext";
 //update this with more data
 export default function TrailCard({ trail }) {
   const [errors, setErrors] = useState([]);
-  const { loggedIn, user } = useContext(LoginContext);
+  const { loggedIn, user, setUser } = useContext(LoginContext);
   const newFav = {
     trail_id: trail.id,
     user_id: user.id
@@ -28,6 +28,9 @@ export default function TrailCard({ trail }) {
       if (res.ok) {
         res.json().then((data) => {
           console.log("data: ", data);
+          const userCopy = JSON.parse(JSON.stringify(user))
+          userCopy.favorite_trails=data
+          setUser(userCopy)
         });
       } else {
         res.json()

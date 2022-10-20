@@ -18,12 +18,14 @@ export default function Explore() {
   const [errors, setErrors] = useState([])
   const [trails, setTrails] = useState([])
   const [map, setMap] = useState(true)
+  const [latLong, setlatLong] = useState({
+    lat: null, lng: null
+  })
 
   function stateInput(e) {
     const stateCopy = {
       ...userSearch
     }
-    // debugger
     stateCopy.state = getStateId(e.target.value)
     setUserSearch(stateCopy)
     // console.log("statecopy", stateCopy)
@@ -52,6 +54,11 @@ export default function Explore() {
             .then(data => {
               console.log("data from fetch:", data)
               setTrails([data])
+              const latLongCopy = {...latLong}
+              latLongCopy.lat = data.latitude
+              latLongCopy.lng = data.longitude
+              console.log('latlongcopy', latLongCopy)
+              setlatLong(latLongCopy)
             })
         }
         else {
@@ -96,9 +103,10 @@ export default function Explore() {
     lng: -77
   };
 
+  const {lat, lng} = latLong
+
   const zoom = 20
 
-  console.log('process.env:', process.env)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY
@@ -115,13 +123,6 @@ export default function Explore() {
   }, [])
   //Google maps stuff ^^
 
-  // console.log('trails', trails[0].length)
-  
-//   const trailMarkers = () {
-//     for (let i =0; i <trails.length; i++) {
-//       return <Marker
-//   }
-// }
   
  return (
     <main className='explore-page'>
@@ -137,19 +138,16 @@ export default function Explore() {
       <div className='results'>
         {trails.length > 0 ? <TrailsContainer trails={trails} errors={errors} /> : null}
       </div>
-      {/* <Button variant="contained" href="#contained-buttons">
-        Link
-      </Button> */}
 
       <div className='map-container'>
         {isLoaded ? <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={zoom}
+          zoom={20}
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
-          {/* <Marker position={{ lat: 38.9072, lng: -77.03 }} /> */}
+          {latLong.lat ? <Marker position={{ lat: latLong.lat, lng: latLong.lng }} /> : null}
         </GoogleMap> : null}
       </div>
 
