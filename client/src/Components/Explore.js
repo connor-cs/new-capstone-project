@@ -85,17 +85,10 @@ export default function Explore() {
     return stateNames
   }
 
-  // console.log(trails)
-  // // console.log(process.env)
-  // const trailsList = (trails) => {
-  //   for (let x in trails)
-  //   console.log('log', x[0].name)
-
-  // trailsList(trails)
 
   //Google maps stuff:
   const containerStyle = {
-    width: '700px',
+    width: '900px',
     height: '600px',
   };
   const center = {

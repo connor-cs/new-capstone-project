@@ -70,16 +70,13 @@ code {
 .landing-page {
   background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1803&q=80');
   background-size: contain;
-  /*
-  width: 100vw;
-  /* background-size: cover; */
   opacity: 0.9;
   height: 100vh;
   text-align: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .login-page {
@@ -148,7 +145,6 @@ code {
   left: 40vw;
   position: absolute;
   display: center;
-  /* min-height: 100vh; doesn't do anything*/
 }
 
 /* .explore-btn {
