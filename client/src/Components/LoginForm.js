@@ -27,7 +27,6 @@ export default function LoginForm() {
       })
     }
   
-    //double check this
     function handleSubmit(e) {
       e.preventDefault()
       const user = {

@@ -1,6 +1,5 @@
 import React from "react";
 import { useContext, useState } from "react";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Card from "@mui/material/Card";
 import CardContent from '@mui/material/CardContent'
 import CardHeader from "@mui/material/CardHeader";
@@ -9,7 +8,6 @@ import { blueGrey } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { LoginContext } from "./LoggedInContext";
 
-//update this with more data
 export default function TrailCard({ trail }) {
   const [errors, setErrors] = useState([]);
   const { loggedIn, user, setUser } = useContext(LoginContext);
@@ -29,29 +27,29 @@ export default function TrailCard({ trail }) {
         res.json().then((data) => {
           console.log("data: ", data);
           const userCopy = JSON.parse(JSON.stringify(user))
-          userCopy.favorite_trails=data
+          userCopy.favorite_trails = data
           setUser(userCopy)
         });
       } else {
         res.json()
-        .then(data => setErrors([...data.errors]))
+          .then(data => setErrors([...data.errors]))
         console.log(errors);
       }
     });
   }
 
   return (
-    <Card className="trail-card" key = {trail.id} sx={{ maxWidth: 345, bgcolor: blueGrey[800] }}>
-      <CardHeader title={trail.name} sx={{bgcolor: blueGrey[200]}} subheader={`Length: ${trail.length} miles`}></CardHeader>
+    <Card className="trail-card" key={trail.id} sx={{ maxWidth: 345, bgcolor: blueGrey[800] }}>
+      <CardHeader title={trail.name} sx={{ bgcolor: blueGrey[200] }} subheader={`Length: ${trail.length} miles`}></CardHeader>
       <div key={trail.id} className="trailcard">
         <CardContent>
-        {trail.description}
+          {trail.description}
         </CardContent>
         <p>Location: {trail.directions}</p>
         <p>
           {trail.city} {trail.state}
         </p>
-        {loggedIn ? <IconButton sx={{color: "red"}}onClick={handleFavClick}><FavoriteIcon /></IconButton> : null}
+        {loggedIn ? <IconButton sx={{ color: "red" }} onClick={handleFavClick}><FavoriteIcon /></IconButton> : null}
       </div>
     </Card>
   );

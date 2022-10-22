@@ -1,6 +1,5 @@
 import React from 'react'
 import TrailCard from './TrailCard'
-import { useEffect, useState } from 'react'
 
 export default function TrailsContainer({errors, trails}) {
 const trailsResults = trails.map(trail=> {

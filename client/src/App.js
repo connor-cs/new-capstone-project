@@ -7,31 +7,9 @@ import User from './Components/User';
 import About from './Components/About';
 import Explore from './Components/Explore';
 import { Route, Routes } from 'react-router-dom';
-import { useState} from 'react'
-import { useContext} from 'react';
 import {LoggedInProvider} from './Components/LoggedInContext';
-import { LoginContext } from './Components/LoggedInContext';
-import {useLoadScript, useJsApiLoader} from '@react-google-maps/api'
 
 function App() {
-
-  // const {isLoaded} =useJsApiLoader({
-  //   googleMapsApiKey: 'AIzaSyAgxJjemhhztx1JE2lknwHDE8y_a9T6vcE'
-  // })
-//   const LoginContext = createContext() 
-  
-//   const isLoggedIn = useState({
-//     loggedIn: false,
-//     toggleLogin: () => {
-//         console.log(this.loggedIn)
-//         return !this.loggedIn}
-// })
-  // const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-  // console.log(LoginContext)
-  // const {isLoaded} =useLoadScript({
-  //   googleMapsApiKey: 'AIzaSyAgxJjemhhztx1JE2lknwHDE8y_a9T6vcE'
-  // })
 
  
   return (
@@ -53,7 +31,6 @@ function App() {
 
           <Route path='/account/:id' element = {<User />}></Route>
 
-          {/* <Route exact path = '/trails' element={<TrailsContainer/>}></Route> */}
 
         </Routes>
       </LoggedInProvider>
