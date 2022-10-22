@@ -41,7 +41,7 @@ export default function TrailCard({ trail }) {
   }
 
   return (
-    <Card key = {trail.id} sx={{ maxWidth: 345, bgcolor: blueGrey[800] }}>
+    <Card className="trail-card" key = {trail.id} sx={{ maxWidth: 345, bgcolor: blueGrey[800] }}>
       <CardHeader title={trail.name} sx={{bgcolor: blueGrey[200]}} subheader={`Length: ${trail.length} miles`}></CardHeader>
       <div key={trail.id} className="trailcard">
         <CardContent>

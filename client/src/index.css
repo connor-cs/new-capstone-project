@@ -27,6 +27,30 @@ code {
     monospace;
 }
 
+.about-page {
+  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash0.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+  padding-top: 50px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.explore-page {
+  background-image: url('https://images.unsplash.com/photo-1579408795979-966a21467a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80') ;
+  background-size: contain;
+  height: 100vh;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .form-div {
   display: block;
 }
@@ -44,7 +68,7 @@ code {
 
 
 .landing-page{
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash9000.jpg');
+  background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1803&q=80');
   background-size: contain; /*
   width: 100vw;
   /* background-size: cover; */
@@ -58,7 +82,7 @@ code {
 }
 
 .login-page {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/john-lee-oMneOBYhJxY-unsplash.jpg');
+  background-image: url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1411&q=80');
   padding-top: 1400px;
   text-align: center;
   color: white;
@@ -79,14 +103,14 @@ code {
 }
 
 .signup-page {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash3.jpg');
+  background-image: url('https://images.unsplash.com/19/nomad.JPG?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1398&q=80');
   background-size: cover;
   height: 100vh;
   text-align: center;
 }
 
 .user-container {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash4.jpg');
+  background-image: url('https://images.unsplash.com/photo-1492133969098-09ba49699f47?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80');
   height: 100vh;
   text-align: center;
   -webkit-background-size: cover;
@@ -95,18 +119,7 @@ code {
   background-size: cover;
 }
 
-.about-page {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash0.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100vh;
-  text-align: center;
-  padding-top: 50px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 .form-div {
   position: fixed;
