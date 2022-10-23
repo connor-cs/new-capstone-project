@@ -28,7 +28,7 @@ export default function User() {
     fetch(`/user/${id}`)
       .then((res) => res.json())
       .then((data) => setUserData(data));
-      console.log(user)
+    console.log(user)
     // .then(res=>console.log("username", res.username))
     // .then(data=>(console.log("username", data.username)))
     // .then(data =>console.log(data))
@@ -91,10 +91,9 @@ export default function User() {
 
   return (
 
-    
+
     <div className="user-container">
       <h2>Welcome, {userData.username} </h2>
-      {/* <button onClick={handleDeleteClick}>Delete account</button> */}
       <Button
         onClick={handleDeleteClick}
         variant="outlined"
@@ -106,7 +105,7 @@ export default function User() {
       </Button>
 
       <Button
-        onClick={()=>setUpdate(!update)}
+        onClick={() => setUpdate(!update)}
         variant="outlined"
         size="small"
         fontSize="small"
@@ -138,8 +137,8 @@ export default function User() {
       <div>
         {user.favorite_trails.map(fav => {
           console.log("fav", fav)
-        return <TrailCard key={fav.id} trail={fav} />
-      })}
+          return <TrailCard key={fav.id} trail={fav} />
+        })}
       </div>
     </div>
   );

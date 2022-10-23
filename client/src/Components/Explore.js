@@ -54,7 +54,7 @@ export default function Explore() {
             .then(data => {
               console.log("data from fetch:", data)
               setTrails([data])
-              const latLongCopy = {...latLong}
+              const latLongCopy = { ...latLong }
               latLongCopy.lat = data.latitude
               latLongCopy.lng = data.longitude
               console.log('latlongcopy', latLongCopy)
@@ -85,17 +85,10 @@ export default function Explore() {
     return stateNames
   }
 
-  // console.log(trails)
-  // // console.log(process.env)
-  // const trailsList = (trails) => {
-  //   for (let x in trails)
-  //   console.log('log', x[0].name)
-  
-  // trailsList(trails)
 
   //Google maps stuff:
   const containerStyle = {
-    width: '700px',
+    width: '900px',
     height: '600px',
   };
   const center = {
@@ -103,7 +96,7 @@ export default function Explore() {
     lng: -77
   };
 
-  const {lat, lng} = latLong
+  const { lat, lng } = latLong
 
   const zoom = 20
 
@@ -123,8 +116,8 @@ export default function Explore() {
   }, [])
   //Google maps stuff ^^
 
-  
- return (
+
+  return (
     <main className='explore-page'>
 
       <div>

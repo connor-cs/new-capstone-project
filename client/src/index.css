@@ -2,11 +2,11 @@
 
 
 body {
-text-align: center;
-font-family: 'Open Sans';
-height: 100vh;
-width: 100vw;
-display: block;
+  text-align: center;
+  font-family: 'Open Sans';
+  height: 100vh;
+  width: 100vw;
+  display: block;
 }
 
 .map-container {
@@ -27,11 +27,35 @@ code {
     monospace;
 }
 
+.about-page {
+  background-image: url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+  padding-top: 50px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.explore-page {
+  background-image: url('https://images.unsplash.com/photo-1579408795979-966a21467a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-size: contain;
+  height: 100vh;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .form-div {
   display: block;
 }
 
-.header-bar{
+.header-bar {
   text-align: center;
   border: solid, #e9d0b4;
   background-color: #EBECEC;
@@ -43,22 +67,20 @@ code {
 }
 
 
-.landing-page{
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash9000.jpg');
-  background-size: contain; /*
-  width: 100vw;
-  /* background-size: cover; */
+.landing-page {
+  background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1803&q=80');
+  background-size: contain;
   opacity: 0.9;
   height: 100vh;
   text-align: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .login-page {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/john-lee-oMneOBYhJxY-unsplash.jpg');
+  background-image: url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1411&q=80');
   padding-top: 1400px;
   text-align: center;
   color: white;
@@ -68,8 +90,16 @@ code {
   background-size: cover;
 }
 
+.logout-button {
+  
+  bottom: 50vh;
+  left: 90vh;
+  display: center;
+  position: absolute;
+}
+
 .trailcard {
-  color:#EBECEC;
+  color: #EBECEC;
   padding-left: 10px;
 }
 
@@ -79,14 +109,14 @@ code {
 }
 
 .signup-page {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash3.jpg');
+  background-image: url('https://images.unsplash.com/19/nomad.JPG?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1398&q=80');
   background-size: cover;
   height: 100vh;
   text-align: center;
 }
 
 .user-container {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash4.jpg');
+  background-image: url('https://images.unsplash.com/photo-1492133969098-09ba49699f47?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80');
   height: 100vh;
   text-align: center;
   -webkit-background-size: cover;
@@ -95,18 +125,6 @@ code {
   background-size: cover;
 }
 
-.about-page {
-  background-image: url('/home/cyphers/development/code/project/new-capstone/new-capstone-project/client/src/Images/unsplash0.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100vh;
-  text-align: center;
-  padding-top: 50px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 
 .form-div {
   position: fixed;
@@ -125,9 +143,8 @@ code {
   background-color: transparent;
   bottom: 40vh;
   left: 40vw;
-  position: fixed;
+  position: absolute;
   display: center;
-  /* min-height: 100vh; doesn't do anything*/
 }
 
 /* .explore-btn {

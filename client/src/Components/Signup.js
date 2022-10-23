@@ -22,7 +22,7 @@ export default function Signup() {
       .then(res => {
         if (res.ok) {
           res.json()
-          .then(data=>setUser(data))
+            .then(data => setUser(data))
           setLoggedIn(true)
           navigate('/')
         }
@@ -34,7 +34,7 @@ export default function Signup() {
       })
   }
 
-  
+
   return (
     <main className="signup-page">
       <form onSubmit={handleSubmit}>
