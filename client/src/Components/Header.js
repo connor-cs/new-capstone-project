@@ -30,10 +30,9 @@ export default function Header() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="transparent">
           <Toolbar>
-
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Button color="inherit">
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link className="link" to="/about" style={{ textDecoration: "none", color: "#6131a3" }}>
                   About
                 </Link>
               </Button>
@@ -41,7 +40,7 @@ export default function Header() {
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Button color="inherit">
-                <Link to="/explore" style={{ textDecoration: "none" }}>
+                <Link className="link" to="/explore" style={{ textDecoration: "none", color: "#6131a3" }}>
                   Explore
                 </Link>
               </Button>
@@ -49,15 +48,17 @@ export default function Header() {
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Button variant="Outlined" color="inherit">
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  Good<HikingIcon/>Hikes
+                <Link className="link" to="/" style={{ textDecoration: "none", color: "#6131a3" }}>
+                  Good
+                  <HikingIcon />
+                  Hikes
                 </Link>
               </Button>
             </Typography>
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Button color="inherit">
-                <Link to="/login" style={{ textDecoration: "none" }}>
+                <Link className="link" to="/login" style={{ textDecoration: "none", color: "#6131a3" }}>
                   {loggedIn ? "Logout" : "Login"}
                 </Link>
               </Button>
@@ -65,7 +66,20 @@ export default function Header() {
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Button variant="Outlined" color="inherit">
-                {loggedIn ? (<Link to={`/account/${user.id}`} style={{ textDecoration: "none" }}> Account</Link>) : (<Link to="/signup" style={{ textDecoration: "none" }}>Signup</Link>)}
+                {loggedIn ? (
+                  <Link
+                    to={`/account/${user.id}`}
+                    className="link"
+                    style={{ textDecoration: "none", color: "#6131a3" }}
+                  >
+                    {" "}
+                    Account
+                  </Link>
+                ) : (
+                  <Link className="link" to="/signup" style={{ textDecoration: "none", color: "#6131a3" }}>
+                    Signup
+                  </Link>
+                )}
               </Button>
             </Typography>
           </Toolbar>

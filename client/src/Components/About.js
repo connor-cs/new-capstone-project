@@ -7,7 +7,7 @@ export default function About() {
         <h3 className='black-text'>About</h3>
         
         <p>This app allows you to search for hiking trails near you by searching your city and state.
-          The data includes the name, a brief description, the length and the location.</p>
+          The results include the name, a brief description, the length and the location.</p>
           <br></br>
         <h4 className='black-text'><ul>The technologies used include:</ul></h4>
         <li>A front-end built with React with a Google Maps integration</li>
