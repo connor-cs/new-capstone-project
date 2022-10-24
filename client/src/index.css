@@ -40,6 +40,22 @@ code {
   background-size: cover;
 }
 
+.about-div {
+  border-radius: 10px;
+  background-color: black;
+  padding: 10px;
+  opacity: 0.3;
+  color: white;
+  width: fit-content;
+  margin: auto;
+  align-content: center;
+  position: relative;
+}
+
+/* .black-text {
+  color:#200742;
+} */
+
 .explore-page {
   background-image: url('https://images.unsplash.com/photo-1579408795979-966a21467a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
   background-size: contain;
@@ -77,6 +93,10 @@ code {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-repeat: no-repeat;
+}
+
+.link {
+  font-weight: bold;
 }
 
 .login-page {
@@ -142,7 +162,7 @@ code {
   color: #EBECEC;
   background-color: transparent;
   bottom: 40vh;
-  left: 40vw;
+  left: 30vw;
   position: absolute;
   display: center;
 }
