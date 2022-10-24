@@ -24,7 +24,6 @@ export default function Header() {
     //     <NavLink to="/">Good Hikes</NavLink>
     //     <NavLink to="/login">{loggedIn ? "Logout" : "Login"}</NavLink>
     //     {loggedIn ? <NavLink to={`/account/${user.id}`}> Account</NavLink> : <NavLink to="/signup">Signup</NavLink>}
-
     // </header>
     <>
       <Box sx={{ flexGrow: 1 }}>
