@@ -42,9 +42,9 @@ code {
 
 .about-div {
   border-radius: 10px;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 10px;
-  opacity: 0.3;
+  /* opacity: 0.3; */
   color: white;
   width: fit-content;
   margin: auto;
@@ -52,9 +52,10 @@ code {
   position: relative;
 }
 
-/* .black-text {
-  color:#200742;
-} */
+
+.about-text {
+  color: rgba(97, 49, 163, 1);
+}
 
 .explore-page {
   background-image: url('https://images.unsplash.com/photo-1579408795979-966a21467a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
@@ -67,13 +68,32 @@ code {
   background-size: cover;
 }
 
+.explore-form-div {
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .form-div {
-  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  left: 500vh;
+  letter-spacing: .1em;
+  color: #6131a3;
+  font-weight: 900;
+  padding: 5px;
+  border-radius: 10px;
+  background-color:  rgba(255, 255, 255, 0.6);
+}
+
+#good-hikes {
+  font-size: 20px;
 }
 
 .header-bar {
   text-align: center;
-  border: solid, #e9d0b4;
   background-color: #EBECEC;
   padding-bottom: 25px;
   padding-top: 30px;
@@ -103,6 +123,7 @@ code {
   background-image: url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1411&q=80');
   padding-top: 1400px;
   text-align: center;
+  display: flex;
   color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -133,6 +154,30 @@ code {
   background-size: cover;
   height: 100vh;
   text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.signup-form {
+  padding-top: 30px;
+  color:  rgba(97, 49, 163, 1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  width: fit-content;
+  display: flex;
+  height: fit-content;
+  margin-top: 70px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* .signup-text-input {
+  padding: 3px;
+  border-radius: 5px, rgba(97, 49, 163, 1);
+} */
+.text-input:focus {
+  border: 3px solid rgb(247, 244, 250);
 }
 
 .user-container {
@@ -150,7 +195,7 @@ code {
   position: fixed;
   display: center;
   bottom: 50vh;
-  left: 50vh;
+  left: 65vh;
 }
 
 .welcome-message {

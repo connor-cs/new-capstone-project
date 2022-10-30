@@ -47,7 +47,7 @@ export default function Header() {
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Button variant="Outlined" color="inherit">
-                <Link className="link" to="/" style={{ textDecoration: "none", color: "#6131a3" }}>
+                <Link className="link" id='good-hikes' to="/" style={{ textDecoration: "none", color: "#6131a3" }}>
                   Good
                   <HikingIcon />
                   Hikes

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {LoginContext} from './LoggedInContext';
 import { useContext } from 'react';
+import Button from '@mui/material/Button';
 
 
 export default function LoginForm() {
@@ -55,11 +56,15 @@ export default function LoginForm() {
         <>
             <div className="form-div">
                 <form onSubmit={handleSubmit}>
-                    <label>Username</label>
-                    <input type="text" name="username" value={username} onChange={handleChange} />
-                    <label>Password</label>
-                    <input type="password" name="password" value={password} onChange={handleChange} />
-                    <button type="submit">Login</button>
+                    <label>Username: </label>
+                    <input className= "text-input" type="text" name="username" value={username} onChange={handleChange} />
+                    <br></br>
+                    <br></br>
+                    <label>Password: </label>
+                    <input className="text-input" type="password" name="password" value={password} onChange={handleChange} />
+                    <br></br>
+                    <br></br>
+                    <Button variant="outlined" type="submit">Login</Button>
                 </form>
             </div>
         </>

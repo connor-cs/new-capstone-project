@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react'
 import TrailsContainer from './TrailsContainer'
 import getStateId from './HelperActions/GetStateId'
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
-import { Button } from '@mui/material'
+import Button from '@mui/material/Button';
 
 
 export default function Explore() {
@@ -28,7 +28,6 @@ export default function Explore() {
     }
     stateCopy.state = getStateId(e.target.value)
     setUserSearch(stateCopy)
-    // console.log("statecopy", stateCopy)
   }
 
 
@@ -71,7 +70,6 @@ export default function Explore() {
   function renderOptions() {
     const allstates = getStateId("all")
     const stateNames = []
-    // console.log(allstates)
     for (let state in allstates) {
       // console.log(allstates[state])
       // if (state==="AL"){
@@ -120,11 +118,13 @@ export default function Explore() {
   return (
     <main className='explore-page'>
 
-      <div>
+      <div className="explore-form-div">
         <form onSubmit={onSubmit}>
           <input type="text" name="city" value={userSearch.city} placeholder="City" onChange={handleChange}></input>
+          <span>&nbsp;&nbsp;</span>
           <select onChange={stateInput}>{renderOptions()}</select>
-          <button>submit</button>
+          
+          <Button variant="contained">submit</Button>
         </form>
       </div>
 
