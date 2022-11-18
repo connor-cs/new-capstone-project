@@ -124,7 +124,7 @@ export default function Explore() {
           <span>&nbsp;&nbsp;</span>
           <select onChange={stateInput}>{renderOptions()}</select>
           
-          <Button variant="contained">submit</Button>
+          <Button onClick={onSubmit} variant="contained">submit</Button>
         </form>
       </div>
 
