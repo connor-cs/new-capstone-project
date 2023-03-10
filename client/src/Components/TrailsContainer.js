@@ -2,7 +2,10 @@ import React from 'react'
 import TrailCard from './TrailCard'
 
 export default function TrailsContainer({errors, trails}) {
-const trailsResults = trails.map(trail=> {
+
+    // console.log('from contain', trails)
+
+    const trailsResults = trails.map((trail, idx)=> {
     return <TrailCard trail={trail} />
 })
     return (

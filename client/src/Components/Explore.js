@@ -53,6 +53,7 @@ export default function Explore() {
             .then(data => {
               console.log("data from fetch:", data)
               setTrails([data])
+              
               const latLongCopy = { ...latLong }
               latLongCopy.lat = data.latitude
               latLongCopy.lng = data.longitude
@@ -83,7 +84,6 @@ export default function Explore() {
     return stateNames
   }
 
-
   //Google maps stuff:
   const containerStyle = {
     width: '900px',
@@ -113,7 +113,11 @@ export default function Explore() {
     setMap(null)
   }, [])
   //Google maps stuff ^^
-
+  
+  // console.log('from exp', {trails})
+  const test = trails[0].map(obj => Object.values(obj))
+  console.log({test})
+  console.log('drilling', Object.values(trails[0]))
 
   return (
     <main className='explore-page'>
@@ -123,26 +127,29 @@ export default function Explore() {
           <input type="text" name="city" value={userSearch.city} placeholder="City" onChange={handleChange}></input>
           <span>&nbsp;&nbsp;</span>
           <select onChange={stateInput}>{renderOptions()}</select>
-          
+
           <Button onClick={onSubmit} variant="contained">submit</Button>
         </form>
       </div>
+      <div className='explore-container'>
+        <div className='results'>
+          {trails.length > 0 ? <TrailsContainer trails={trails[0].map(obj => Object.values(obj))} errors={errors} /> : null}
+        </div>
 
-      <div className='results'>
-        {trails.length > 0 ? <TrailsContainer trails={trails} errors={errors} /> : null}
+        <div className='map-container'>
+          {isLoaded ? <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={20}
+            onLoad={onLoad}
+            onUnmount={onUnmount}
+          >
+            {latLong.lat ? <Marker position={{ lat: latLong.lat, lng: latLong.lng }} /> : null}
+          </GoogleMap> : null}
+        </div>
       </div>
 
-      <div className='map-container'>
-        {isLoaded ? <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={20}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
-        >
-          {latLong.lat ? <Marker position={{ lat: latLong.lat, lng: latLong.lng }} /> : null}
-        </GoogleMap> : null}
-      </div>
+
 
     </main>
   )

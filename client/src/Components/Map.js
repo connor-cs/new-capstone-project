@@ -10,7 +10,7 @@ export default function Map() {
   return (
     <>
     <h1>This is the map</h1>
-    <GoogleMap zoom={10} center={{lat:38, lng: -77}} mapContainerClassName="map-container"></GoogleMap>
+    <GoogleMap zoom={-20} center={{lat:38, lng: -77}} mapContainerClassName="map-container"></GoogleMap>
     </>
   )
 }
