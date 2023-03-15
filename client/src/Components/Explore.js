@@ -114,10 +114,6 @@ export default function Explore() {
   }, [])
   //Google maps stuff ^^
   
-  // console.log('from exp', {trails})
-  const test = trails[0].map(obj => Object.values(obj))
-  console.log({test})
-  console.log('drilling', Object.values(trails[0]))
 
   return (
     <main className='explore-page'>
@@ -133,7 +129,7 @@ export default function Explore() {
       </div>
       <div className='explore-container'>
         <div className='results'>
-          {trails.length > 0 ? <TrailsContainer trails={trails[0].map(obj => Object.values(obj))} errors={errors} /> : null}
+          {trails.length > 0 ? <TrailsContainer trails={trails.flat()} errors={errors} /> : null}
         </div>
 
         <div className='map-container'>
